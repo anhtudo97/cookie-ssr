@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Home</div>
+
+    <script>
+      const date = new Date();
+      date.setTime(Date.now() + 1000 * 3600);
+
+      /*
+        domain: set range of domain can apply such as: .testcookie.com (all domain have this extend)
+        path: set path can handle create a cookie (default is '/') such as: /post => only /post can apply or see the cookie
+        expries: time to expired cookie
+        max-age: age of cookie (count on seconds)
+        HttpOnly: only server can read the cookie ( client cannot like browser,...) but other way like postman or some app can catch the batch also can check and read
+        Secure: the cookie only can work with SSL <=> HTTPS (exception case with localhost can apply secure)
+      */
+      document.cookie = `email=tuanh@gmail.com; expires=${date.toUTCString()}; secure`;
+    </script>
+  </body>
+</html>
